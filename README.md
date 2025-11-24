@@ -1,3 +1,3 @@
 # App quản lí bãi đỗ xe
-Tài khoản: admin	
-/mật khẩu : admin
+Tài khoản: admin	  
+Mật khẩu : admin
