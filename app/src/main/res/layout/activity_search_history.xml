@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Header with back button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="#42A5F5"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="Quay lại"
+                android:padding="4dp"
+                android:src="@android:drawable/ic_menu_revert" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tìm Kiếm Lịch Sử"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Filter Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/slot_background"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bộ lọc tìm kiếm"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- License Plate Search -->
+            <EditText
+                android:id="@+id/edtLicensePlate"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="4dp"
+                android:hint="Nhập biển số xe"
+                android:inputType="textCapCharacters"
+                android:padding="4dp"
+                android:textSize="13sp" />
+
+            <!-- Slot Selection -->
+            <Spinner
+                android:id="@+id/spinnerSlot"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="4dp" />
+
+            <!-- Date and Time Selection in Grid -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <EditText
+                    android:id="@+id/edtStartDate"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    android:focusable="false"
+                    android:hint="Từ ngày"
+                    android:padding="4dp"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edtEndDate"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    android:focusable="false"
+                    android:hint="Đến ngày"
+                    android:padding="4dp"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edtTimeFrom"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    android:focusable="false"
+                    android:hint="Từ giờ"
+                    android:padding="4dp"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/edtTimeTo"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    android:focusable="false"
+                    android:hint="Đến giờ"
+                    android:padding="4dp"
+                    android:textSize="12sp" />
+            </GridLayout>
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="4dp"
+                android:text="Tìm kiếm"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Statistics Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/slot_background"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <!-- Left side statistics -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Thống kê"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:columnCount="4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vào: "
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotalIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="0"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ra: "
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTotalOut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="14sp" />
+                </GridLayout>
+            </LinearLayout>
+
+            <!-- Export Excel Button -->
+            <Button
+                android:id="@+id/btnExportExcel"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:text="Xuất Excel"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Search Results -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSearchResults"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <!-- Fullscreen Image View (Initially Gone) -->
+    <FrameLayout
+        android:id="@+id/fullscreenImageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/fullscreenImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
